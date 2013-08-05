@@ -5,9 +5,18 @@
         <title>{% block title %}{% endblock %}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         {% block head %}{% endblock %}
     </head>
     <body>
-        {% block content %}{% endblock %}
+        {% block navigation %}
+            {% include "navigation.html" %}
+        {% endblock %}
+        
+        <div class="container">
+            <div>
+            {% block content %}{% endblock %}
+            </div>
+        </div>
     </body>
 </html>

@@ -2,11 +2,11 @@
 
 {% block title %}Home{% endblock %}
 
+{% block navigation %}
+    {% include "navigation.html" with view="home" %}
+{% endblock %}
+
 {% block content %}
-
-{% include "navigation.html" with view="home" %}
-<div class="container">
-
 <h1>Maschinen</h1>
 
 <ul>
@@ -14,6 +14,4 @@
 <li><a href="{% url "list" machine.pk %}">{{ machine.name }}</a></li>
 {% endfor %}
 </ul>
-
-</div>
 {% endblock %}

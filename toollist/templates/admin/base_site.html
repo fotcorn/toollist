@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+{% endblock %}
+
+{% block branding %}
+{% include "navigation.html" %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
