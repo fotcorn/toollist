@@ -6,4 +6,4 @@ from toollist.models import ToolEntry
 class ToolEntryForm(forms.ModelForm):
     class Meta:
         model = ToolEntry
-        #widgets = {'tool': ChainedSelect}
+        widgets = {'machine': forms.HiddenInput}

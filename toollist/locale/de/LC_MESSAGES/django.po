@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-05 03:45-0500\n"
-"PO-Revision-Date: 2013-08-05 10:45+0100\n"
-"Last-Translator: Fabio Anderegg <fabio.anderegg@gonnado.com>\n"
+"POT-Creation-Date: 2013-08-05 18:00-0500\n"
+"PO-Revision-Date: 2013-08-06 01:00+0100\n"
+"Last-Translator: Fabio Anderegg\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: models.py:13
+#: models.py:18
+#: models.py:60
 msgid "Tool type"
 msgstr "Werkzeug Typ"
 
@@ -26,6 +28,7 @@ msgid "Tool types"
 msgstr "Werkzeug Typen"
 
 #: models.py:24
+#: models.py:61
 msgid "Tool"
 msgstr "Werkzeug"
 
@@ -50,6 +53,7 @@ msgid "Tool coolings"
 msgstr "Werkzeug Kühlungen"
 
 #: models.py:54
+#: models.py:63
 msgid "Machine"
 msgstr "Maschine"
 
@@ -60,6 +64,14 @@ msgstr "Maschinen"
 #: models.py:58
 msgid "Number"
 msgstr "Nummer"
+
+#: models.py:64
+msgid "Holder"
+msgstr "Aufnahme"
+
+#: models.py:65
+msgid "Cooling"
+msgstr "Kühlung"
 
 #: models.py:67
 msgid "Diameter"
@@ -88,4 +100,28 @@ msgstr "Werkzeug Eintrag"
 #: models.py:76
 msgid "Tools entries"
 msgstr "Werkzeug Einträge"
+
+#: templates/admin/base.html:28
+msgid "Welcome,"
+msgstr ""
+
+#: templates/admin/base.html:33
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/base.html:36
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/base.html:38
+msgid "Log out"
+msgstr ""
+
+#: templates/admin/base.html:47
+msgid "Home"
+msgstr ""
+
+#: templates/admin/base_site.html:4
+msgid "Django site admin"
+msgstr ""
 

@@ -15,7 +15,7 @@ class ToolType(models.Model):
 
 class Tool(models.Model):
     name = models.CharField(max_length=255)
-    type = models.ForeignKey(ToolType)
+    type = models.ForeignKey(ToolType, verbose_name=_('Tool type'))
     
     def __unicode__(self):
         return self.name
@@ -57,12 +57,12 @@ class Machine(models.Model):
 class ToolEntry(models.Model):
     number = models.PositiveIntegerField(_('Number'))
     
-    type = models.ForeignKey(ToolType)
-    tool = ChainedForeignKey(Tool, chained_field='tool_type', chained_model_field='tool_type')
+    type = models.ForeignKey(ToolType, verbose_name=_('Tool type'))
+    tool = ChainedForeignKey(Tool, chained_field='type', chained_model_field='type', verbose_name=_('Tool'))
     
-    machine = models.ForeignKey(Machine)
-    holder = models.ForeignKey(ToolHolder)
-    cooling = models.ForeignKey(ToolCooling)
+    machine = models.ForeignKey(Machine, verbose_name=_('Machine'))
+    holder = models.ForeignKey(ToolHolder, verbose_name=_('Holder'))
+    cooling = models.ForeignKey(ToolCooling, verbose_name=_('Cooling'))
     
     diameter = models.CharField(_('Diameter'), max_length=10, null=True, blank=True)
     angle = models.PositiveIntegerField(_('Angle'), null=True, blank=True)

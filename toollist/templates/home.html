@@ -9,9 +9,8 @@
 {% block content %}
 <h1>Maschinen</h1>
 
-<ul>
 {% for machine in machines %}
-<li><a href="{% url "list" machine.pk %}">{{ machine.name }}</a></li>
+<h2><a href="{% url "list_tools" machine.pk %}">{{ machine.name }}</a></h2>
 {% endfor %}
-</ul>
+
 {% endblock %}

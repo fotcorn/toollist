@@ -4,10 +4,10 @@
 
 {% block content %}
 <h1>Werkzeugliste {{ maschine.name }}</h1>
-<a href="/admin/toollist/toolentry/add/?machine={{ machine.pk }}">Werkzeug hinzufügen</a>
-<table cellspacing="0">
+<a href="{% url "add" machine.pk %}">Werkzeug hinzufügen</a>
+<table class="table table-striped">
 <tr>
-    <th>Nr.</th>
+    <th>#</th>
     <th>Typ</th>
     <th>Werkzeug</th>
     <th>Aufnahme</th>
@@ -16,18 +16,22 @@
     <th>Länge</th>
     <th>Winkel</th>
     <th>Radius</th>
+    <th>Bearbeiten</th>
+    <th>Löschen</th>
 </tr>
 {% for entry in entries %}
 <tr>
-    <td><a href="{% url "edit" entry.pk %}">{{ entry.number }}</a></td>
-    <td>{{ entry.tool_type.name }}</td>
+    <td>{{ entry.number }}</td>
+    <td>{{ entry.type.name }}</td>
     <td>{{ entry.tool.name }}</td>
     <td>{{ entry.holder.name }}</td>
     <td>{{ entry.cooling.name }}</td>
     <td>{{ entry.diameter }}</td>
-    <td>{{ entry.length }}</td>
-    <td>{{ entry.angle }}</td>
-    <td>{{ entry.radius }}</td>
+    <td>{% if entry.length %}{{ entry.length }}{% endif %}</td>
+    <td>{% if entry.angle %}{{ entry.angle }}{% endif %}</td>
+    <td>{% if entry.radius %}{{ entry.radius }}{% endif %}</td>
+    <td><a href="{% url "edit" entry.pk %}">Bearbeiten</a></td>
+    <td><a href="{% url "remove" entry.pk %}">Löschen</a></td>
 </tr>
 {% endfor %}
 </table>
