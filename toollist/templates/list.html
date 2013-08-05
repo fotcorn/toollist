@@ -2,16 +2,11 @@
 
 {% block title %}Werkzeigliste {{ maschine.name }}{% endblock %}
 
-{% block head %}
-<style type="text/css">
-    table, td, th {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
+
+{% include "navigation.html" %}
+
+<div class="container">
 <h1>Werkzeugliste {{ maschine.name }}</h1>
 <a href="/admin/toollist/toolentry/add/?machine={{ machine.pk }}">Werkzeug hinzufügen</a>
 <table cellspacing="0">
@@ -40,5 +35,5 @@
 </tr>
 {% endfor %}
 </table>
-
+</div>
 {% endblock %}

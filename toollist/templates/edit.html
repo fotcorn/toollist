@@ -8,10 +8,14 @@
 
 {% block content %}
 
+{% include "navigation.html" %}
+
+<div class="container">
 <form method="post" action="">
     {% csrf_token %}
     {{ form.as_ul }}
     <input type="submit" value="Speichern">
 </form>
+</div>
 
 {% endblock %}

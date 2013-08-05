@@ -1,0 +1,16 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">Werkzeugliste</div>
+    
+        <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li{% if view == "home" %} class="active"{% endif %}>
+                <a href="{% url "home" %}">Maschinen</a>
+            </li>
+            <li{% if "/admin/" in request.path %} class="active"{% endif %}>
+                <a href="/admin/">Vorgaben bearbeiten</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
