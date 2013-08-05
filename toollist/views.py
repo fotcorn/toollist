@@ -14,7 +14,7 @@ def list_tools(request, pk):
 
 def edit(request, pk):
     entry = get_object_or_404(ToolEntry, pk=pk)
-    
+    machine = entry.machine
     if request.method == 'POST':
         form = ToolEntryForm(request.POST, instance=entry)
         if form.is_valid():
