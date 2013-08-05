@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Werkzeugliste</h1>
+
+<a href="/admin/">Vorgaben bearbeiten</a>
+
+<h2>Maschinen</h2>
+<ul>
+{% for maschine in maschinen %}
+<li><a href="{% url "liste" maschine.pk %}">{{ maschine.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Werkzeigliste {{ maschine.name }}{% endblock %}
+
+{% block content %}
+<h1>Werkzeugliste {{ maschine.name }}</h1>
+
+<table>
+<tr>
+    <th>Nr</th>
+    <th>Typ</th>
+    <th>Werkzeug</th>
+    <th>Aufnahme</th>
+    <th>Kühlung</th>
+    <th>Durchmesser</th>
+    <th>Länge</th>
+    <th>Winkel</th>
+    <th>Radius</th>
+</tr>
+{% for eintrag in eintraege %}
+
+{% endfor %}
+</table>
+
+{% endblock %}
