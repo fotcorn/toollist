@@ -8,6 +8,6 @@ def home(request):
 
 def list(request, pk):
     machine = get_object_or_404(Machine, pk=pk)
-    ToolEntry.objects.filter(machine=machine)
+    entries = ToolEntry.objects.filter(machine=machine)
     return render(request, 'list.html', locals())
     

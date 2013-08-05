@@ -2,12 +2,21 @@
 
 {% block title %}Werkzeigliste {{ maschine.name }}{% endblock %}
 
+{% block head %}
+<style type="text/css">
+    table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <h1>Werkzeugliste {{ maschine.name }}</h1>
-
-<table>
+<a href="/admin/toollist/toolentry/add/?machine={{ machine.pk }}">Werkzeug hinzufügen</a>
+<table cellspacing="0">
 <tr>
-    <th>Nr</th>
+    <th>Nr.</th>
     <th>Typ</th>
     <th>Werkzeug</th>
     <th>Aufnahme</th>
@@ -17,8 +26,18 @@
     <th>Winkel</th>
     <th>Radius</th>
 </tr>
-{% for eintrag in eintraege %}
-
+{% for entry in entries %}
+<tr>
+    <td>{{ entry.number }}</td>
+    <td>{{ entry.tool_type.name }}</td>
+    <td>{{ entry.tool.name }}</td>
+    <td>{{ entry.holder.name }}</td>
+    <td>{{ entry.cooling.name }}</td>
+    <td>{{ entry.diameter }}</td>
+    <td>{{ entry.length }}</td>
+    <td>{{ entry.angle }}</td>
+    <td>{{ entry.radius }}</td>
+</tr>
 {% endfor %}
 </table>
 

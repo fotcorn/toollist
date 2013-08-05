@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-05 03:45-0500\n"
+"PO-Revision-Date: 2013-08-05 10:45+0100\n"
+"Last-Translator: Fabio Anderegg <fabio.anderegg@gonnado.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: models.py:13
+msgid "Tool type"
+msgstr "Werkzeug Typ"
+
+#: models.py:14
+msgid "Tool types"
+msgstr "Werkzeug Typen"
+
+#: models.py:24
+msgid "Tool"
+msgstr "Werkzeug"
+
+#: models.py:25
+msgid "Tools"
+msgstr "Werkzeuge"
+
+#: models.py:34
+msgid "Tool holder"
+msgstr "Werkzeug Aufnahme"
+
+#: models.py:35
+msgid "Tool holders"
+msgstr "Werkzeug Aufnahmen"
+
+#: models.py:44
+msgid "Tool cooling"
+msgstr "Werkzeug Kühlung"
+
+#: models.py:45
+msgid "Tool coolings"
+msgstr "Werkzeug Kühlungen"
+
+#: models.py:54
+msgid "Machine"
+msgstr "Maschine"
+
+#: models.py:55
+msgid "Machines"
+msgstr "Maschinen"
+
+#: models.py:58
+msgid "Number"
+msgstr "Nummer"
+
+#: models.py:67
+msgid "Diameter"
+msgstr "Durchmesser"
+
+#: models.py:68
+msgid "Angle"
+msgstr "Winkel"
+
+#: models.py:70
+msgid "Pliers"
+msgstr "Zange"
+
+#: models.py:71
+msgid "Length"
+msgstr "Länge"
+
+#: models.py:72
+msgid "Radius"
+msgstr "Radius"
+
+#: models.py:75
+msgid "Tool entry"
+msgstr "Werkzeug Eintrag"
+
+#: models.py:76
+msgid "Tools entries"
+msgstr "Werkzeug Einträge"
+

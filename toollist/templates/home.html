@@ -9,8 +9,8 @@
 
 <h2>Maschinen</h2>
 <ul>
-{% for maschine in maschinen %}
-<li><a href="{% url "liste" maschine.pk %}">{{ maschine.name }}</a></li>
+{% for machine in machines %}
+<li><a href="{% url "list" machine.pk %}">{{ machine.name }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
