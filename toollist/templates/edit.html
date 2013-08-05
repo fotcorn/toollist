@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Speichern">
+</form>
+
+{% endblock %}

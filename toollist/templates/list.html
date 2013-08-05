@@ -28,7 +28,7 @@
 </tr>
 {% for entry in entries %}
 <tr>
-    <td>{{ entry.number }}</td>
+    <td><a href="{% url "edit" entry.pk %}">{{ entry.number }}</a></td>
     <td>{{ entry.tool_type.name }}</td>
     <td>{{ entry.tool.name }}</td>
     <td>{{ entry.holder.name }}</td>
