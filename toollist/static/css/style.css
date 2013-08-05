@@ -72,4 +72,9 @@ body {
     max-width: 1170px;
   }
 }
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	position: static;
+}
 
