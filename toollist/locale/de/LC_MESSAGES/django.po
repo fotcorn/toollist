@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-05 18:00-0500\n"
-"PO-Revision-Date: 2013-08-06 01:00+0100\n"
+"PO-Revision-Date: 2013-08-06 22:59+0100\n"
 "Last-Translator: Fabio Anderegg\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -21,11 +21,11 @@ msgstr ""
 #: models.py:18
 #: models.py:60
 msgid "Tool type"
-msgstr "Werkzeug Typ"
+msgstr "Typ"
 
 #: models.py:14
 msgid "Tool types"
-msgstr "Werkzeug Typen"
+msgstr "Typen"
 
 #: models.py:24
 #: models.py:61
@@ -38,19 +38,19 @@ msgstr "Werkzeuge"
 
 #: models.py:34
 msgid "Tool holder"
-msgstr "Werkzeug Aufnahme"
+msgstr "Aufnahme"
 
 #: models.py:35
 msgid "Tool holders"
-msgstr "Werkzeug Aufnahmen"
+msgstr "Aufnahmen"
 
 #: models.py:44
 msgid "Tool cooling"
-msgstr "Werkzeug Kühlung"
+msgstr "Kühlung"
 
 #: models.py:45
 msgid "Tool coolings"
-msgstr "Werkzeug Kühlungen"
+msgstr "Kühlungen"
 
 #: models.py:54
 #: models.py:63
@@ -95,11 +95,11 @@ msgstr "Radius"
 
 #: models.py:75
 msgid "Tool entry"
-msgstr "Werkzeug Eintrag"
+msgstr "Eintrag"
 
 #: models.py:76
 msgid "Tools entries"
-msgstr "Werkzeug Einträge"
+msgstr "Einträge"
 
 #: templates/admin/base.html:28
 msgid "Welcome,"
