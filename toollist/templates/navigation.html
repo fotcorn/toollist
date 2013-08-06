@@ -1,17 +1,23 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
         <div class="navbar-brand">Werkzeugliste</div>
-    
-        <div class="nav-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li{% if view == "home" %} class="active"{% endif %}>
-                <a href="{% url "home" %}">Maschinen</a>
-            </li>
-            
-            <li{% if navigation_admin %} class="active"{% endif %}>
-                <a href="/admin/">Vorgaben bearbeiten</a>
-            </li>
-        </ul>
+        
+        <div class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li{% if view == "home" %} class="active"{% endif %}>
+                    <a href="{% url "home" %}">Maschinen</a>
+                </li>
+                
+                <li{% if navigation_admin %} class="active"{% endif %}>
+                    <a href="/admin/">Vorgaben bearbeiten</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
