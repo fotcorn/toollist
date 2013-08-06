@@ -18,11 +18,12 @@ class Tool(models.Model):
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'))
     
     def __unicode__(self):
-        return self.name
+        return u'{} ({})'.format(self.name, self.type.name)
     
     class Meta:
         verbose_name = _('Tool')
         verbose_name_plural = _('Tools')
+        ordering = ('type', 'name')
         
 class ToolHolder(models.Model):
     name = models.CharField(max_length=255)
@@ -66,6 +67,8 @@ class ToolEntry(models.Model):
     
     diameter = models.CharField(_('Diameter'), max_length=10, null=True, blank=True)
     angle = models.PositiveIntegerField(_('Angle'), null=True, blank=True)
+    
+    cog_count = models.PositiveIntegerField(_('Cog count'), null=True, blank=True)
     
     pliers = models.DecimalField(_('Pliers'), max_digits=10, decimal_places=1, null=True, blank=True)
     length = models.DecimalField(_('Length'), max_digits=10, decimal_places=3, null=True, blank=True)
