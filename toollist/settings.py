@@ -1,4 +1,4 @@
-# Django settings for werkzeugliste project.
+from os.path import abspath, dirname
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -9,14 +9,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+PROJECT_ROOT = abspath(dirname(__file__))
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'werkzeugliste',                      # Or path to database file if using sqlite3.
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': 'django',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': PROJECT_ROOT + '/../toollist.sqlite3',
     }
 }
 

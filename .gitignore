@@ -2,3 +2,4 @@
 .project
 .pydevproject
 *.mo
+toollist.sqlite3
