@@ -10,16 +10,30 @@
 <h1>Werkzeug hinzufügen</h1>
 <form method="post" action="" class="form-horizontal">
     {% csrf_token %}
-    {{ form.non_field_errors }}
+    
+    {% if form.non_field_errors %}
+        <div class="form-group has-error">
+        <span class="help-block">
+        {% for error in form.non_field_errors %}
+            {{ error }}<br>
+        {% endfor %}
+        </div>
+    {% endif %}
     
     {% for field in form %}
         {% if field.html_name == "machine" %}
             {{ field }}
         {% else %}
-            <div class="form-group">
-                {{ field.errors }}
+            <div class="form-group{% if field.errors %} has-error{% endif %}">
                 <label for="id_{{ field.html_name }}" class="col-lg-2 control-label">{{ field.label }}</label>
-                <div class="col-lg-10">{{ field }}</div>
+                <div class="col-lg-10">
+                    {{ field }}
+                    {% if field.errors %}
+                    <span class="help-block">
+                        {% for error in field.errors %}{{error}}{% endfor %}<br>
+                    </span>
+                    {% endif %}
+                </div>
             </div>
         {% endif %}
     {% endfor %}
