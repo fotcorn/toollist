@@ -639,10 +639,6 @@
        margin-right: auto;
        position: static;
 }
-#content-main .module:nth-child(1),
-#content-main .module:nth-child(2) {
-	display: none;
-}
 #user-tools {
 	display: none;
 }
