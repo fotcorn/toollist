@@ -2,79 +2,7 @@ body {
 	padding-top: 50px;
 }
 
-/* no hover effect on brand */
 .navbar-inverse .navbar-brand:hover {
 	color: #999999;
-}
-
-/* django admin styling */
-#branding .navbar {
-    background-color: #222222;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-#branding .container {
-    margin-left: auto;
-    margin-right: auto;
-}
-#branding .navbar-brand {
-	float: left;
-	color: #999999;
-    font-size: 18px;
-    line-height: 20px;
-    padding: 15px;
-    
-    margin-left: -15px;
-    margin-right: 5px;
-}
-#branding nav-collapse {
-	float: left;
-}
-#branding ul {
-	margin: 0;
-}
-#branding li {
-	float: left;
-	list-style: none;
-	padding: 0;
-}
-#branding li.active a {
-    background-color: #080808;
-    color: #ffffff;
-}
-#branding a {
-	display: block;
-    line-height: 20px;
-    padding: 15px;
-    font-size: 14px;
-}
-#branding a:link, #header a:visited {
-	color: #999999;
-}
-#branding a:hover {
-	color: #ffffff;
-	text-decoration: none;
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 728px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 940px;
-  }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
-}
-#container {
-	margin-left: auto;
-	margin-right: auto;
-	position: static;
 }
 
