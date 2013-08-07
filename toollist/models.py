@@ -18,7 +18,7 @@ class Tool(models.Model):
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'))
     
     def __unicode__(self):
-        return u'{} ({})'.format(self.name, self.type.name)
+        return u'{0} ({1})'.format(self.name, self.type.name)
     
     class Meta:
         verbose_name = _('Tool')
