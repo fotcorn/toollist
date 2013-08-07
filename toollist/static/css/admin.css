@@ -644,3 +644,6 @@
 #content-main .module:nth-child(2) {
 	display: none;
 }
+#user-tools {
+	display: none;
+}
