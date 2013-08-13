@@ -6,3 +6,8 @@ body {
 	color: #999999;
 }
 
+
+.table-striped > tbody > tr:nth-child(2n+1) > td,
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #C0C0C0;
+}
