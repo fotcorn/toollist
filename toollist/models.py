@@ -12,6 +12,7 @@ class ToolType(models.Model):
     class Meta:
         verbose_name = _('Tool type')
         verbose_name_plural = _('Tool types')
+        ordering = ('name',)
 
 class Tool(models.Model):
     name = models.CharField(max_length=255)
@@ -23,7 +24,7 @@ class Tool(models.Model):
     class Meta:
         verbose_name = _('Tool')
         verbose_name_plural = _('Tools')
-        ordering = ('type', 'name')
+        ordering = ('type__name', 'name')
         
 class ToolHolder(models.Model):
     name = models.CharField(max_length=255)
@@ -34,6 +35,7 @@ class ToolHolder(models.Model):
     class Meta:
         verbose_name = _('Tool holder')
         verbose_name_plural = _('Tool holders')
+        ordering = ('name',)
     
 class ToolCooling(models.Model):
     name = models.CharField(max_length=255)
