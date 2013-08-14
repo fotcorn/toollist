@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-14 04:39-0500\n"
+"POT-Creation-Date: 2013-08-14 14:49-0500\n"
 "PO-Revision-Date: 2013-08-14 11:41+0100\n"
 "Last-Translator: Fabio Anderegg <fabio.anderegg@gonnado.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:13
-#: models.py:19
-#: models.py:73
+#: models.py:13 models.py:19 models.py:73
 msgid "Tool type"
 msgstr "Typ"
 
@@ -27,8 +25,7 @@ msgstr "Typ"
 msgid "Tool types"
 msgstr "Typen"
 
-#: models.py:25
-#: models.py:74
+#: models.py:25 models.py:74
 msgid "Tool"
 msgstr "Werkzeug"
 
@@ -52,9 +49,7 @@ msgstr "Kühlung"
 msgid "Tool coolings"
 msgstr "Kühlungen"
 
-#: models.py:57
-#: models.py:66
-#: models.py:77
+#: models.py:57 models.py:66 models.py:77
 msgid "Machine"
 msgstr "Maschine"
 
@@ -145,4 +140,3 @@ msgstr "Home"
 #: templates/admin/base_site.html:4
 msgid "Django site admin"
 msgstr "Werkzeugliste Admin"
-

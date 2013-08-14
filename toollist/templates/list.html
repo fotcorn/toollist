@@ -10,17 +10,17 @@
     <th>#</th>
     <th>Typ</th>
     <th>Werkzeug</th>
-    <th>Status</th>
     <th>&oslash;</th>
     <th>Zähnezahl</th>
+    <th>Eckenradius</th>
+    <th>Spannnut länge</th>
     <th>Aufnahme</th>
     <th>Zangen &oslash;</th>
     <th>Kühlung</th>
-    <th>Spannnut länge</th>
     <th>Winkel</th>
     <th>Länge</th>
     <th>Radius</th>
-    <th>Eckenradius</th>
+    <th>Status</th>
     <th>Bearbeiten</th>
     <th>Löschen</th>
 </tr>
@@ -29,17 +29,17 @@
     <td>{{ entry.number }}</td>
     <td>{{ entry.type.name }}</td>
     <td>{{ entry.tool.name }}</td>
-    <td>{{ entry.get_status_display }}</td>
     <td>{{ entry.diameter }}</td>
     <td>{% if entry.cog_count %}{{ entry.cog_count }}{% endif %}</td>
+    <td>{% if entry.edge_radius %}{{ entry.edge_radius }}{% endif %}</td>
+    <td>{% if entry.chip_flute_length %}{{ entry.chip_flute_length }}{% endif %}</td>
     <td>{{ entry.holder.name }}</td>
     <td>{% if entry.pliers %}{{ entry.pliers }}{% endif %}</td>
     <td>{{ entry.cooling.name }}</td>
-    <td>{% if entry.chip_flute_length %}{{ entry.chip_flute_length }}{% endif %}</td>
     <td>{% if entry.angle %}{{ entry.angle }}&deg;{% endif %}</td>
     <td>{% if entry.length %}{{ entry.length }}{% endif %}</td>    
     <td>{% if entry.radius %}{{ entry.radius }}{% endif %}</td>
-    <td>{% if entry.edge_radius %}{{ entry.edge_radius }}{% endif %}</td>
+    <td>{{ entry.get_status_display }}</td>
     <td><a href="{% url "edit" entry.pk %}">Bearbeiten</a></td>
     <td><a href="{% url "remove" entry.pk %}">Löschen</a></td>
 </tr>
