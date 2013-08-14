@@ -86,7 +86,7 @@ class ToolEntry(models.Model):
     pliers = models.DecimalField(_('Pliers'), max_digits=10, decimal_places=1, null=True, blank=True)
     length = models.DecimalField(_('Length'), max_digits=10, decimal_places=3, null=True, blank=True)
     radius = models.DecimalField(_('Radius'), max_digits=10, decimal_places=3, null=True, blank=True)
-    edge_radius = models.DecimalField(_('Edge count'), max_digits=10, decimal_places=3, null=True, blank=True)
+    edge_radius = models.DecimalField(_('Edge radius'), max_digits=10, decimal_places=3, null=True, blank=True)
     
     class Meta:
         verbose_name = _('Tool entry')

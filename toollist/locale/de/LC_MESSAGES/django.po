@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-05 18:00-0500\n"
-"PO-Revision-Date: 2013-08-06 22:59+0100\n"
-"Last-Translator: Fabio Anderegg\n"
+"POT-Creation-Date: 2013-08-14 04:39-0500\n"
+"PO-Revision-Date: 2013-08-14 11:41+0100\n"
+"Last-Translator: Fabio Anderegg <fabio.anderegg@gonnado.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: models.py:13
-#: models.py:18
-#: models.py:60
+#: models.py:19
+#: models.py:73
 msgid "Tool type"
 msgstr "Typ"
 
@@ -27,101 +27,122 @@ msgstr "Typ"
 msgid "Tool types"
 msgstr "Typen"
 
-#: models.py:24
-#: models.py:61
+#: models.py:25
+#: models.py:74
 msgid "Tool"
 msgstr "Werkzeug"
 
-#: models.py:25
+#: models.py:26
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: models.py:34
+#: models.py:36
 msgid "Tool holder"
 msgstr "Aufnahme"
 
-#: models.py:35
+#: models.py:37
 msgid "Tool holders"
 msgstr "Aufnahmen"
 
-#: models.py:44
+#: models.py:47
 msgid "Tool cooling"
 msgstr "Kühlung"
 
-#: models.py:45
+#: models.py:48
 msgid "Tool coolings"
 msgstr "Kühlungen"
 
-#: models.py:54
-#: models.py:63
+#: models.py:57
+#: models.py:66
+#: models.py:77
 msgid "Machine"
 msgstr "Maschine"
 
-#: models.py:55
+#: models.py:58
 msgid "Machines"
 msgstr "Maschinen"
 
-#: models.py:58
+#: models.py:67
+msgid "Closet"
+msgstr "Schrank"
+
+#: models.py:68
+msgid "NA"
+msgstr "NAG"
+
+#: models.py:71
 msgid "Number"
 msgstr "Nummer"
 
-#: models.py:64
+#: models.py:78
 msgid "Holder"
 msgstr "Aufnahme"
 
-#: models.py:65
+#: models.py:79
 msgid "Cooling"
 msgstr "Kühlung"
 
-#: models.py:67
+#: models.py:81
 msgid "Diameter"
 msgstr "Durchmesser"
 
-#: models.py:68
+#: models.py:82
 msgid "Angle"
 msgstr "Winkel"
 
-#: models.py:70
+#: models.py:83
+msgid "Cog count"
+msgstr "Zähnezahl"
+
+#: models.py:84
+msgid "Chip flute"
+msgstr "Spannnutlänge"
+
+#: models.py:86
 msgid "Pliers"
 msgstr "Zange"
 
-#: models.py:71
+#: models.py:87
 msgid "Length"
 msgstr "Länge"
 
-#: models.py:72
+#: models.py:88
 msgid "Radius"
 msgstr "Radius"
 
-#: models.py:75
+#: models.py:89
+msgid "Edge radius"
+msgstr "Eckenradius"
+
+#: models.py:92
 msgid "Tool entry"
 msgstr "Eintrag"
 
-#: models.py:76
+#: models.py:93
 msgid "Tools entries"
 msgstr "Einträge"
 
 #: templates/admin/base.html:28
 msgid "Welcome,"
-msgstr ""
+msgstr "Wilkommen,"
 
 #: templates/admin/base.html:33
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentation"
 
 #: templates/admin/base.html:36
 msgid "Change password"
-msgstr ""
+msgstr "Passwort ändern"
 
 #: templates/admin/base.html:38
 msgid "Log out"
-msgstr ""
+msgstr "Ausloggen"
 
 #: templates/admin/base.html:47
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: templates/admin/base_site.html:4
 msgid "Django site admin"
-msgstr ""
+msgstr "Werkzeugliste Admin"
 

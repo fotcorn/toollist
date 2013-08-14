@@ -39,7 +39,7 @@
     <td>{% if entry.angle %}{{ entry.angle }}&deg;{% endif %}</td>
     <td>{% if entry.length %}{{ entry.length }}{% endif %}</td>    
     <td>{% if entry.radius %}{{ entry.radius }}{% endif %}</td>
-    <td>{% if entry.radius %}{{ entry.edge_radius }}{% endif %}</td>
+    <td>{% if entry.edge_radius %}{{ entry.edge_radius }}{% endif %}</td>
     <td><a href="{% url "edit" entry.pk %}">Bearbeiten</a></td>
     <td><a href="{% url "remove" entry.pk %}">Löschen</a></td>
 </tr>
