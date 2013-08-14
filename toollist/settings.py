@@ -13,11 +13,8 @@ PROJECT_ROOT = abspath(dirname(__file__))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'localhost',
-        'NAME': 'toollist',
-        'USER': 'postgres',
-        'PASSWORD': 'django',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': PROJECT_ROOT + '/../toollist.sqlite3',
     }
 }
 
