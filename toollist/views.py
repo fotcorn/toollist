@@ -9,7 +9,11 @@ def home(request):
 
 def list_tools(request, pk):
     machine = get_object_or_404(Machine, pk=pk)
-    entries = ToolEntry.objects.filter(machine=machine).order_by('number')
+    entries = ToolEntry.objects.filter(machine=machine)
+    if request.GET.get('sort') == 'type':
+        entries = entries.order_by('type__name', 'tool__name')
+    else:
+        entries = entries.order_by('number')
     return render(request, 'list.html', locals())
 
 def edit(request, pk):

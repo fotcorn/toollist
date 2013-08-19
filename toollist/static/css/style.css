@@ -11,3 +11,7 @@ body {
 .table-striped > tbody > tr:nth-child(2n+1) > th {
     background-color: #C0C0C0;
 }
+
+td {
+	white-space: nowrap;
+}

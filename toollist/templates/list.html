@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Werkzeigliste {{ maschine.name }}{% endblock %}
+{% block title %}Werkzeugliste {{ maschine.name }}{% endblock %}
 
 {% block content %}
 <h1>Werkzeugliste {{ maschine.name }}</h1>
 <a href="{% url "add" machine.pk %}">Werkzeug hinzufügen</a>
 <table class="table table-striped">
 <tr>
-    <th>#</th>
-    <th>Typ</th>
+    <th><a href="{% url "list_tools" machine.pk %}">#</a></th>
+    <th><a href="{% url "list_tools" machine.pk %}?sort=type">Typ</a></th>
     <th>Werkzeug</th>
-    <th>&oslash;</th>
-    <th>Zähnezahl</th>
-    <th>Eckenradius</th>
-    <th>Spannnut länge</th>
+    <th>&Oslash;</th>
+    <th>z</th>
+    <th>r</th>
+    <th>Spannnut</th>
     <th>Aufnahme</th>
-    <th>Zangen &oslash;</th>
+    <th>Spann&Oslash;</th>
     <th>Kühlung</th>
     <th>Winkel</th>
-    <th>Länge</th>
-    <th>Radius</th>
+    <th>&Delta;l</th>
+    <th>&Delta;r</th>
     <th>Status</th>
     <th>Bearbeiten</th>
     <th>Löschen</th>
