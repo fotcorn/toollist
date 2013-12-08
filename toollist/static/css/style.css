@@ -15,3 +15,7 @@ body {
 td {
 	white-space: nowrap;
 }
+
+.table-striped > tbody tr.closet td {
+	background-color: #FF8A3A;
+}

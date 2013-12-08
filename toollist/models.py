@@ -26,17 +26,6 @@ class Tool(models.Model):
         verbose_name_plural = _('Tools')
         ordering = ('type__name', 'name')
         
-class ToolHolder(models.Model):
-    name = models.CharField(max_length=255)
-    
-    def __unicode__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = _('Tool holder')
-        verbose_name_plural = _('Tool holders')
-        ordering = ('name',)
-    
 class ToolCooling(models.Model):
     name = models.CharField(max_length=255)
     
@@ -56,6 +45,18 @@ class Machine(models.Model):
     class Meta:
         verbose_name = _('Machine')
         verbose_name_plural = _('Machines')
+
+class ToolHolder(models.Model):
+    name = models.CharField(max_length=255)
+    machine = models.ForeignKey(Machine)
+    
+    def __unicode__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = _('Tool holder')
+        verbose_name_plural = _('Tool holders')
+        ordering = ('name',)
 
 class ToolEntry(models.Model):
     
@@ -79,13 +80,13 @@ class ToolEntry(models.Model):
     cooling = models.ForeignKey(ToolCooling, verbose_name=_('Cooling'))
     
     diameter = models.CharField(_('Diameter'), max_length=10, null=True, blank=True)
-    angle = models.PositiveIntegerField(_('Angle'), null=True, blank=True)
+    angle = models.DecimalField(_('Angle'), max_digits=10, decimal_places=2, null=True, blank=True)
     cog_count = models.PositiveIntegerField(_('Cog count'), null=True, blank=True)
-    chip_flute_length = models.PositiveIntegerField(_('Chip flute'), null=True, blank=True)
+    chip_flute_length = models.DecimalField(_('Chip flute'), max_digits=10, decimal_places=2, null=True, blank=True)
     
     pliers = models.DecimalField(_('Pliers'), max_digits=10, decimal_places=1, null=True, blank=True)
     length = models.DecimalField(_('Length'), max_digits=10, decimal_places=3, null=True, blank=True)
-    radius = models.DecimalField(_('Radius'), max_digits=10, decimal_places=3, null=True, blank=True)
+    radius = models.CharField(_('Radius'), max_length=20, null=True, blank=True)
     edge_radius = models.DecimalField(_('Edge radius'), max_digits=10, decimal_places=3, null=True, blank=True)
     
     class Meta:

@@ -14,7 +14,7 @@
     <th>z</th>
     <th>r</th>
     <th>Spannnut</th>
-    <th>Aufnahme</th>
+    <th><a href="{% url "list_tools" machine.pk %}?sort=holder">Aufnahme</a></th>
     <th>Spann&Oslash;</th>
     <th>Kühlung</th>
     <th>Winkel</th>
@@ -25,7 +25,7 @@
     <th>Löschen</th>
 </tr>
 {% for entry in entries %}
-<tr>
+<tr {% if entry.status == 2 %}class="closet"{% endif %}>
     <td>{{ entry.number }}</td>
     <td>{{ entry.type.name }}</td>
     <td>{{ entry.tool.name }}</td>
