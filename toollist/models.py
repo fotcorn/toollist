@@ -89,7 +89,7 @@ class ToolEntry(models.Model):
     radius = models.CharField(_('Radius'), max_length=20, null=True, blank=True)
     edge_radius = models.DecimalField(_('Edge radius'), max_digits=10, decimal_places=3, null=True, blank=True)
     
-    comment = models.CharField(max_length=100, blank=True, null=True)
+    comment = models.CharField(_('Comment'), max_length=100, blank=True, null=True)
     
     class Meta:
         verbose_name = _('Tool entry')

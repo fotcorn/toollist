@@ -7,7 +7,11 @@
 {% endblock %}
 
 {% block content %}
+{% if entry %}
+<h1>Werkzeug bearbeiten</h1>
+{% else %} 
 <h1>Werkzeug hinzufügen</h1>
+{% endif %}
 <form method="post" action="" class="form-horizontal">
     {% csrf_token %}
     
