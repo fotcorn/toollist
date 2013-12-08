@@ -23,7 +23,7 @@ def edit(request, pk):
     entry = get_object_or_404(ToolEntry, pk=pk)
     machine = entry.machine
     if request.method == 'POST':
-        form = ToolEntryForm(request.POST, machine, instance=entry)
+        form = ToolEntryForm(machine, request.POST, instance=entry)
         if form.is_valid():
             form.save()
             return redirect('list_tools', entry.machine.pk)
@@ -35,7 +35,7 @@ def edit(request, pk):
 def add(request, machine_pk):
     machine = get_object_or_404(Machine, pk=machine_pk)
     if request.method == 'POST':
-        form = ToolEntryForm(request.POST, machine)
+        form = ToolEntryForm(machine, request.POST)
         if form.is_valid():
             form.save()
             return redirect('list_tools', machine.pk)

@@ -8,16 +8,14 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'ToolHolder.machine'
-        db.add_column(u'toollist_toolholder', 'machine',
-                      self.gf('django.db.models.fields.related.ForeignKey')(to=orm['toollist.Machine'], null=True, blank=True),
-                      keep_default=False)
 
+        # Changing field 'ToolHolder.machine'
+        db.alter_column(u'toollist_toolholder', 'machine_id', self.gf('django.db.models.fields.related.ForeignKey')(default=1, to=orm['toollist.Machine']))
 
     def backwards(self, orm):
-        # Deleting field 'ToolHolder.machine'
-        db.delete_column(u'toollist_toolholder', 'machine_id')
 
+        # Changing field 'ToolHolder.machine'
+        db.alter_column(u'toollist_toolholder', 'machine_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['toollist.Machine'], null=True))
 
     models = {
         u'toollist.machine': {
@@ -58,7 +56,7 @@ class Migration(SchemaMigration):
         u'toollist.toolholder': {
             'Meta': {'ordering': "('name',)", 'object_name': 'ToolHolder'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'machine': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['toollist.Machine']", 'null': 'True', 'blank': 'True'}),
+            'machine': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['toollist.Machine']"}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
         u'toollist.tooltype': {
