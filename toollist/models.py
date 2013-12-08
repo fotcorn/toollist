@@ -51,7 +51,7 @@ class ToolHolder(models.Model):
     machine = models.ForeignKey(Machine)
     
     def __unicode__(self):
-        return self.name
+        return u'{} ({})'.format(self.name, self.machine.name)
     
     class Meta:
         verbose_name = _('Tool holder')
@@ -88,6 +88,8 @@ class ToolEntry(models.Model):
     length = models.DecimalField(_('Length'), max_digits=10, decimal_places=3, null=True, blank=True)
     radius = models.CharField(_('Radius'), max_length=20, null=True, blank=True)
     edge_radius = models.DecimalField(_('Edge radius'), max_digits=10, decimal_places=3, null=True, blank=True)
+    
+    comment = models.CharField(max_length=100, blank=True, null=True)
     
     class Meta:
         verbose_name = _('Tool entry')

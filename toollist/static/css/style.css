@@ -19,3 +19,10 @@ td {
 .table-striped > tbody tr.closet td {
 	background-color: #FF8A3A;
 }
+
+.comment {
+	display: none;
+}
+.comment_show {
+	display: table-row;
+}
