@@ -51,7 +51,7 @@ class ToolHolder(models.Model):
     machine = models.ForeignKey(Machine)
     
     def __unicode__(self):
-        return u'{} ({})'.format(self.name, self.machine.name)
+        return u'{0} ({1})'.format(self.name, self.machine.name)
     
     class Meta:
         verbose_name = _('Tool holder')
