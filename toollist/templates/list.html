@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block title %}Werkzeugliste {{ maschine.name }}{% endblock %}
 
 {% block content %}
-<h1>Werkzeugliste {{ maschine.name }}</h1>
-<a href="{% url "add" machine.pk %}">Werkzeug hinzufügen</a>
+<h1>Werkzeugliste {{ machine.name }}</h1>
+
+{% if machine.is_turning %}
+<a href="{% url "add_turning" machine.pk %}">Werkzeug hinzufügen</a>
+{% else %}
+<a href="{% url "add_milling" machine.pk %}">Werkzeug hinzufügen</a>
+{% endif %}
+
 <table class="table table-striped">
 <tr>
     <th><a href="{% url "list_tools" machine.pk %}">#</a></th>
     <th><a href="{% url "list_tools" machine.pk %}?sort=type">Typ</a></th>
     <th>Werkzeug</th>
+    {% if machine.is_turning %}<th><a href="{% url "list_tools" machine.pk %}?sort=name">Name</a></th>{% endif %}
     <th>&Oslash;</th>
     <th>z</th>
     <th>r</th>
@@ -29,6 +38,7 @@
     <td>{{ entry.number }}</td>
     <td>{{ entry.type.name }}</td>
     <td>{{ entry.tool.name }}</td>
+    {% if machine.is_turning %}<td>{% if entry.name %}{{ entry.name }}{% endif %}</td>{% endif %}
     <td>{{ entry.diameter }}</td>
     <td>{% if entry.cog_count %}{{ entry.cog_count }}{% endif %}</td>
     <td>{% if entry.edge_radius %}{{ entry.edge_radius }}{% endif %}</td>
@@ -40,13 +50,46 @@
     <td>{% if entry.length %}{{ entry.length }}{% endif %}</td>    
     <td>{% if entry.radius %}{{ entry.radius }}{% endif %}</td>
     <td>{{ entry.get_status_display }}</td>
-    <td><a href="{% url "edit" entry.pk %}">Bearbeiten</a></td>
+    {% if machine.is_turning %}
+    <td><a href="{% url "edit_turning" entry.pk %}">Bearbeiten</a></td>
+    {% else %}
+    <td><a href="{% url "edit_milling" entry.pk %}">Bearbeiten</a></td>
+    {% endif %}
     <td><a href="{% url "remove" entry.pk %}">Löschen</a></td>
 </tr>
 
 <tr class="comment">
     <td>&nbsp;</td>
-    <td colspan="15">{% if entry.comment %}{{ entry.comment }}{% endif %}</td>
+    <td colspan="15">
+        {% if entry.comment %}
+            <div>{{ entry.comment }}</div>
+        {% endif %}
+        {% if machine.is_turning %}
+        <table>
+            <tr>
+                <th>&nbsp;</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>Z</th>
+                <th>C</th>
+            </tr>
+            <tr>
+                <th>{% trans "Geometry" %}</th>
+                <td>{% if entry.geometry_x %}{{ entry.geometry_x }}{% endif %}</td>
+                <td>{% if entry.geometry_y %}{{ entry.geometry_y }}{% endif %}</td>
+                <td>{% if entry.geometry_z %}{{ entry.geometry_z }}{% endif %}</td>
+                <td>{% if entry.geometry_c %}{{ entry.geometry_c }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "Wear" %}</th>
+                <td>{% if entry.wear_x %}{{ entry.wear_x }}{% endif %}</td>
+                <td>{% if entry.wear_y %}{{ entry.wear_y }}{% endif %}</td>
+                <td>{% if entry.wear_z %}{{ entry.wear_z }}{% endif %}</td>
+                <td>{% if entry.wear_c %}{{ entry.wear_c }}{% endif %}</td>
+            </tr>
+        </table>
+        {% endif %}
+    </td>
 </tr>
 
 {% endfor %}

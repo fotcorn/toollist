@@ -37,10 +37,24 @@ class ToolCooling(models.Model):
         verbose_name_plural = _('Tool coolings')
     
 class Machine(models.Model):
+    MILLING = 1
+    TURNING = 2
+    TYPE_CHOICES = (
+        (MILLING, _('Milling')),
+        (TURNING, _('Turning')),
+    )
+    
     name = models.CharField(max_length=255)
+    type = models.IntegerField(choices=TYPE_CHOICES, default=MILLING)
 
     def __unicode__(self):
         return self.name
+    
+    def is_milling(self):
+        return self.type == Machine.MILLING
+    
+    def is_turning(self):
+        return self.type == Machine.TURNING
     
     class Meta:
         verbose_name = _('Machine')
@@ -71,6 +85,7 @@ class ToolEntry(models.Model):
 
     number = models.PositiveIntegerField(_('Number'))
     
+    name = models.CharField(max_length=255, null=True, blank=True)
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'))
     tool = ChainedForeignKey(Tool, chained_field='type', chained_model_field='type', verbose_name=_('Tool'))
     status = models.IntegerField(choices=STATUS_CHOICES, default=MACHINE)
@@ -90,6 +105,16 @@ class ToolEntry(models.Model):
     edge_radius = models.DecimalField(_('Edge radius'), max_digits=10, decimal_places=3, null=True, blank=True)
     
     comment = models.CharField(_('Comment'), max_length=100, blank=True, null=True)
+    
+    geometry_x = models.DecimalField('Geomentry X', max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_y = models.DecimalField('Geomentry Y', max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_z = models.DecimalField('Geomentry Z', max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_c = models.DecimalField('Geomentry C', max_digits=6, decimal_places=3, null=True, blank=True)
+    
+    wear_x = models.DecimalField('Wear X', max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_y = models.DecimalField('Wear Y', max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_z = models.DecimalField('Wear Z', max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_c = models.DecimalField('Wear C', max_digits=6, decimal_places=3, null=True, blank=True)
     
     class Meta:
         verbose_name = _('Tool entry')
