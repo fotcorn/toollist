@@ -24,4 +24,4 @@ class MillingToolEntryForm(forms.ModelForm):
     class Meta:
         model = ToolEntry
         widgets = {'machine': forms.HiddenInput}
-        exclude = ('name', 'geometry_x', 'geometry_y', 'geometry_z', 'geometry_c', 'wear_x', 'wear_y', 'wear_z', 'wear_c',)
+        exclude = ('name', 'geometry_x','geometry_z', 'geometry_r', 'geometry_y', 'geometry_c', 'wear_x', 'wear_z', 'wear_r', 'wear_y', 'wear_c',)

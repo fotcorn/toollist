@@ -69,22 +69,25 @@
             <tr>
                 <th>&nbsp;</th>
                 <th>X</th>
-                <th>Y</th>
                 <th>Z</th>
+                <th>R</th>
+                <th>Y</th>
                 <th>C</th>
             </tr>
             <tr>
                 <th>{% trans "Geometry" %}</th>
                 <td>{% if entry.geometry_x %}{{ entry.geometry_x }}{% endif %}</td>
-                <td>{% if entry.geometry_y %}{{ entry.geometry_y }}{% endif %}</td>
                 <td>{% if entry.geometry_z %}{{ entry.geometry_z }}{% endif %}</td>
+                <td>{% if entry.geometry_r %}{{ entry.geometry_r }}{% endif %}</td>
+                <td>{% if entry.geometry_y %}{{ entry.geometry_y }}{% endif %}</td>
                 <td>{% if entry.geometry_c %}{{ entry.geometry_c }}{% endif %}</td>
             </tr>
             <tr>
                 <th>{% trans "Wear" %}</th>
                 <td>{% if entry.wear_x %}{{ entry.wear_x }}{% endif %}</td>
-                <td>{% if entry.wear_y %}{{ entry.wear_y }}{% endif %}</td>
                 <td>{% if entry.wear_z %}{{ entry.wear_z }}{% endif %}</td>
+                <td>{% if entry.wear_r %}{{ entry.wear_r }}{% endif %}</td>
+                <td>{% if entry.wear_y %}{{ entry.wear_y }}{% endif %}</td>
                 <td>{% if entry.wear_c %}{{ entry.wear_c }}{% endif %}</td>
             </tr>
         </table>

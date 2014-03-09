@@ -106,15 +106,17 @@ class ToolEntry(models.Model):
     
     comment = models.CharField(_('Comment'), max_length=100, blank=True, null=True)
     
-    geometry_x = models.DecimalField('Geomentry X', max_digits=6, decimal_places=3, null=True, blank=True)
-    geometry_y = models.DecimalField('Geomentry Y', max_digits=6, decimal_places=3, null=True, blank=True)
-    geometry_z = models.DecimalField('Geomentry Z', max_digits=6, decimal_places=3, null=True, blank=True)
-    geometry_c = models.DecimalField('Geomentry C', max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_x = models.DecimalField(_('Geomentry X'), max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_z = models.DecimalField(_('Geomentry Z'), max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_r = models.DecimalField(_('Geomentry R'), max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_y = models.DecimalField(_('Geomentry Y'), max_digits=6, decimal_places=3, null=True, blank=True)
+    geometry_c = models.DecimalField(_('Geomentry C'), max_digits=6, decimal_places=3, null=True, blank=True)
     
-    wear_x = models.DecimalField('Wear X', max_digits=6, decimal_places=3, null=True, blank=True)
-    wear_y = models.DecimalField('Wear Y', max_digits=6, decimal_places=3, null=True, blank=True)
-    wear_z = models.DecimalField('Wear Z', max_digits=6, decimal_places=3, null=True, blank=True)
-    wear_c = models.DecimalField('Wear C', max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_x = models.DecimalField(_('Wear X'), max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_z = models.DecimalField(_('Wear Z'), max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_r = models.DecimalField(_('Wear R'), max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_y = models.DecimalField(_('Wear Y'), max_digits=6, decimal_places=3, null=True, blank=True)
+    wear_c = models.DecimalField(_('Wear C'), max_digits=6, decimal_places=3, null=True, blank=True)
     
     class Meta:
         verbose_name = _('Tool entry')

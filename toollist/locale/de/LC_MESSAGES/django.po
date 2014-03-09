@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-02 13:32-0600\n"
-"PO-Revision-Date: 2014-03-02 20:32+0100\n"
+"POT-Creation-Date: 2014-03-09 14:11-0500\n"
+"PO-Revision-Date: 2014-03-09 20:11+0100\n"
 "Last-Translator: Fabio Anderegg\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -126,19 +126,59 @@ msgstr "Eckenradius"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: models.py:120
+#: models.py:109
+msgid "Geomentry X"
+msgstr "Geometrie X"
+
+#: models.py:110
+msgid "Geomentry Z"
+msgstr "Geometrie Z"
+
+#: models.py:111
+msgid "Geomentry R"
+msgstr "Geometrie R"
+
+#: models.py:112
+msgid "Geomentry Y"
+msgstr "Geometrie Y"
+
+#: models.py:113
+msgid "Geomentry C"
+msgstr "Geometrie C"
+
+#: models.py:115
+msgid "Wear X"
+msgstr "Verschleiss X"
+
+#: models.py:116
+msgid "Wear Z"
+msgstr "Verschleiss Z"
+
+#: models.py:117
+msgid "Wear R"
+msgstr "Verschleiss R"
+
+#: models.py:118
+msgid "Wear Y"
+msgstr "Verschleiss Y"
+
+#: models.py:119
+msgid "Wear C"
+msgstr "Verschleiss C"
+
+#: models.py:122
 msgid "Tool entry"
 msgstr "Eintrag"
 
-#: models.py:121
+#: models.py:123
 msgid "Tools entries"
 msgstr "Einträge"
 
-#: templates/list.html:77
+#: templates/list.html:78
 msgid "Geometry"
 msgstr "Geometrie"
 
-#: templates/list.html:84
+#: templates/list.html:86
 msgid "Wear"
 msgstr "Verschleiss"
 
