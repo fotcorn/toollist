@@ -1,4 +1,4 @@
-Django==1.5.1
+Django==1.5.12
 South==0.8.1
 django-extensions==1.1.1
 django-smart-selects==1.0.9
