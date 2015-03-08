@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /home/fotcorn/toollist
-source /home/fotcorn/toollist_venv/bin/activate
+cd ~/toollist
+source ~/toollist_venv/bin/activate
 git pull origin master
 ./manage.py migrate toollist
 cd toollist
