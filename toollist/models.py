@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from smart_selects.db_fields import ChainedForeignKey
 
+
 class ToolType(models.Model):
     name = models.CharField(max_length=255)
 
@@ -13,6 +14,7 @@ class ToolType(models.Model):
         verbose_name = _('Tool type')
         verbose_name_plural = _('Tool types')
         ordering = ('name',)
+
 
 class Tool(models.Model):
     name = models.CharField(max_length=255)
@@ -26,6 +28,7 @@ class Tool(models.Model):
         verbose_name_plural = _('Tools')
         ordering = ('type__name', 'name')
 
+
 class ToolCooling(models.Model):
     name = models.CharField(max_length=255)
 
@@ -35,6 +38,7 @@ class ToolCooling(models.Model):
     class Meta:
         verbose_name = _('Tool cooling')
         verbose_name_plural = _('Tool coolings')
+
 
 class Machine(models.Model):
     MILLING = 1
@@ -60,6 +64,7 @@ class Machine(models.Model):
         verbose_name = _('Machine')
         verbose_name_plural = _('Machines')
 
+
 class ToolHolder(models.Model):
     name = models.CharField(max_length=255)
     machine = models.ForeignKey(Machine, on_delete=models.CASCADE)
@@ -71,6 +76,7 @@ class ToolHolder(models.Model):
         verbose_name = _('Tool holder')
         verbose_name_plural = _('Tool holders')
         ordering = ('name',)
+
 
 class ToolEntry(models.Model):
 
@@ -87,7 +93,8 @@ class ToolEntry(models.Model):
 
     name = models.CharField(max_length=255, null=True, blank=True)
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'), on_delete=models.CASCADE)
-    tool = ChainedForeignKey(Tool, chained_field='type', chained_model_field='type', verbose_name=_('Tool'), on_delete=models.CASCADE)
+    tool = ChainedForeignKey(Tool, chained_field='type', chained_model_field='type', verbose_name=_('Tool'),
+                             on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS_CHOICES, default=MACHINE)
 
     machine = models.ForeignKey(Machine, verbose_name=_('Machine'), on_delete=models.CASCADE)
