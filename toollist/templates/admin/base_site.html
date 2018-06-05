@@ -1,16 +1,18 @@
 {% extends "admin/base.html" %}
+
 {% load i18n %}
+{% load static %}
 
 {% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
 
 {% block extrastyle %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/admin.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
 {% endblock %}
 
 {% block extrahead %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 {% endblock %}
 
