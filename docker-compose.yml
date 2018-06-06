@@ -1,0 +1,40 @@
+version: '2.1'
+
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: Cpe9Rs2XyxqJFh8eUvxfYMhZ
+    networks:
+      - internal
+    restart: always
+
+  django:
+    image: toollist
+    environment:
+      - "DATABASE_URL=postgres://postgres:Cpe9Rs2XyxqJFh8eUvxfYMhZ@postgres:5432/postgres"
+      - "SECRET_KEY=${SECRET_KEY}"
+      - "ALLOWED_HOSTS=${DOMAIN}"
+    depends_on:
+      - postgres
+    networks:
+      - internal
+    restart: always
+
+  caddy:
+    image: abiosoft/caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - django
+    networks:
+      - internal
+    environment:
+      - "DOMAIN:${DOMAIN}"
+    volumes:
+    - ./Caddyfile:/etc/Caddyfile
+    restart: always
+
+networks:
+  internal:

@@ -3,3 +3,4 @@
 .pydevproject
 *.mo
 toollist.sqlite3
+.env

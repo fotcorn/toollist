@@ -1,6 +1,8 @@
-from os.path import abspath, dirname
+import environ
+env = environ.Env(DEBUG=(bool, False),)
+environ.Env.read_env('.env')
 
-DEBUG = True
+DEBUG = env('DEBUG')
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -9,14 +11,11 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-PROJECT_ROOT = abspath(dirname(__file__))
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECT_ROOT + '/toollist.sqlite3',
-    }
+    'default': env.db()
 }
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -52,14 +51,14 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '7a+(c$hq)12&amp;^a$%a)!qaxx@#*+r#9ow=b(ggatt7%ku055ivv'
+SECRET_KEY = env('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,32 +105,30 @@ TEMPLATES = [
     },
 ]
 
-
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'default',
+        },
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
+        '': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        'django': {
+            'handlers': ['console'],
             'level': 'ERROR',
-            'propagate': True,
+            'propagate': False,
+        },
+    },
+    'formatters': {
+        'default': {
+            'format': '%(asctime)s %(module)s %(message)s'
         },
     }
 }

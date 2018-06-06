@@ -9,6 +9,8 @@ name = "pypi"
 [packages]
 Django = "*"
 django-smart-selects = "*"
+"psycopg2-binary" = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.6"
