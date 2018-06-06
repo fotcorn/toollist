@@ -11,6 +11,7 @@ Django = "*"
 django-smart-selects = "*"
 "psycopg2-binary" = "*"
 django-environ = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
