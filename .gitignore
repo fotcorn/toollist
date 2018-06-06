@@ -2,5 +2,5 @@
 .project
 .pydevproject
 *.mo
-toollist.sqlite3
+database.sqlite*
 .env
