@@ -1,3 +1,6 @@
+build:
+	docker build . -t toollist
+
 start:
 	docker-compose up -d
 	docker-compose exec django /code/manage.py migrate
