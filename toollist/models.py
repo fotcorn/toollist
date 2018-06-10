@@ -89,7 +89,7 @@ class ToolEntry(models.Model):
         (NA, _('NA')),
     )
 
-    number = models.PositiveIntegerField(_('Number'))
+    number = models.BigIntegerField(_('Number'))
 
     name = models.CharField(max_length=255, null=True, blank=True)
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'), on_delete=models.CASCADE)
