@@ -62,6 +62,8 @@ STATIC_URL = '/static/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = env('SECRET_KEY')
 
+LOGIN_URL = '/admin/login/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
@@ -73,6 +75,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'toollist.middlewares.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'toollist.urls'
