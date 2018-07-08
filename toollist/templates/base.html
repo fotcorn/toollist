@@ -16,11 +16,8 @@
             {% include "navigation.html" with view="home" %}
         {% endblock %}
 
-        <div class="container">
-            <div>
-            {% block content %}{% endblock %}
-            </div>
-        </div>
+        {% block content %}
+        {% endblock %}
         <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>

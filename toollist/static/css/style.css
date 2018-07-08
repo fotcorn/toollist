@@ -26,3 +26,8 @@ td {
 .comment_show {
 	display: table-row;
 }
+
+.toollist {
+    margin-left: 10px;
+    margin-right: 10px;
+}

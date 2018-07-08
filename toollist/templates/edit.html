@@ -3,51 +3,54 @@
 {% block title %}Home{% endblock %}
 
 {% block head %}
-{{ form.media }}
+  {{ form.media }}
 {% endblock %}
 
 {% block content %}
-{% if entry %}
-<h1>Werkzeug bearbeiten</h1>
-{% else %} 
-<h1>Werkzeug hinzufügen</h1>
-{% endif %}
-<form method="post" action="" class="form-horizontal">
-    {% csrf_token %}
-    
-    {% if form.non_field_errors %}
+  <div class="container">
+    {% if entry %}
+      <h1>Werkzeug bearbeiten</h1>
+    {% else %}
+      <h1>Werkzeug hinzufügen</h1>
+    {% endif %}
+
+    <form method="post" action="" class="form-horizontal">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
         <div class="form-group has-error">
         <span class="help-block">
         {% for error in form.non_field_errors %}
-            {{ error }}<br>
+          {{ error }}<br>
         {% endfor %}
         </div>
-    {% endif %}
-    
-    {% for field in form %}
+      {% endif %}
+
+      {% for field in form %}
         {% if field.html_name == "machine" %}
-            {{ field }}
+          {{ field }}
         {% else %}
-            <div class="form-group{% if field.errors %} has-error{% endif %}">
-                <label for="id_{{ field.html_name }}" class="col-lg-2 control-label">{{ field.label }}</label>
-                <div class="col-lg-10">
-                    {{ field }}
-                    {% if field.errors %}
-                    <span class="help-block">
-                        {% for error in field.errors %}{{error}}{% endfor %}<br>
+          <div class="form-group{% if field.errors %} has-error{% endif %}">
+            <label for="id_{{ field.html_name }}" class="col-lg-2 control-label">{{ field.label }}</label>
+            <div class="col-lg-10">
+              {{ field }}
+              {% if field.errors %}
+                <span class="help-block">
+                        {% for error in field.errors %}{{ error }}{% endfor %}<br>
                     </span>
-                    {% endif %}
-                </div>
+              {% endif %}
             </div>
+          </div>
         {% endif %}
-    {% endfor %}
-    
-    <div class="form-group">
+      {% endfor %}
+
+      <div class="form-group">
         <div class="col-lg-offset-2 col-lg-10">
-            <input type="submit" class="btn btn-primary" value="Speichern"></input>
-            <a href="{% url "list_tools" machine.pk %}" class="btn btn-default">Abbrechen</a>
+          <input type="submit" class="btn btn-primary" value="Speichern"></input>
+          <a href="{% url "list_tools" machine.pk %}" class="btn btn-default">Abbrechen</a>
         </div>
-    </div>
-    
-</form>
+      </div>
+
+    </form>
+  </div>
 {% endblock %}

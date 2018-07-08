@@ -3,10 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Maschinen</h1>
 
-{% for machine in machines %}
-<h2><a href="{% url "list_tools" machine.pk %}">{{ machine.name }}</a></h2>
-{% endfor %}
+  <div class="container">
+    <h1>Maschinen</h1>
+
+    {% for machine in machines %}
+      <h2><a href="{% url "list_tools" machine.pk %}">{{ machine.name }}</a></h2>
+    {% endfor %}
+  </div>
 
 {% endblock %}
