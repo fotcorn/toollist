@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.urls import path
 from django.contrib import admin
 from toollist import views
+from django.conf import settings
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -16,3 +17,9 @@ urlpatterns = [
     url(r'^chaining/', include('smart_selects.urls')),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

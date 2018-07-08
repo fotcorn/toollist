@@ -84,7 +84,7 @@ ROOT_URLCONF = 'toollist.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'toollist.wsgi.application'
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'toollist',
 
     'django.contrib.admin',
@@ -95,7 +95,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'smart_selects',
-)
+]
 
 TEMPLATES = [
     {
@@ -141,3 +141,8 @@ LOGGING = {
         },
     }
 }
+
+if DEBUG:
+    INSTALLED_APPS += ['debug_toolbar']
+    INTERNAL_IPS = ('127.0.0.1',)
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
