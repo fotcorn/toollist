@@ -4,15 +4,7 @@ from django.utils.translation import ugettext as _
 from toollist.models import ToolEntry, ToolHolder
 
 
-class ToolEntryForm(forms.ModelForm):
-
-    def __init__(self, machine, *args, **kwargs):
-        super(ToolEntryForm, self).__init__(*args, **kwargs)
-        for field_name in self.fields.keys():
-            self.fields[field_name].widget.attrs['class'] = 'form-control'
-        self.fields["holder"].queryset = ToolHolder.objects.filter(machine=machine)
-        self.machine = machine
-
+class NumberValidationMixin(object):
     def clean(self):
         cleaned_data = super().clean()
         if cleaned_data['status'] == ToolEntry.MACHINE:
@@ -25,18 +17,28 @@ class ToolEntryForm(forms.ModelForm):
                 if qs.exists():
                     self.add_error('number', _('This number is already in use on this machine'))
 
+
+class ToolEntryForm(NumberValidationMixin, forms.ModelForm):
+    def __init__(self, machine, *args, **kwargs):
+        super(ToolEntryForm, self).__init__(*args, **kwargs)
+        for field_name in self.fields.keys():
+            self.fields[field_name].widget.attrs['class'] = 'form-control'
+        self.fields["holder"].queryset = ToolHolder.objects.filter(machine=machine)
+        self.machine = machine
+
     class Meta:
         model = ToolEntry
         widgets = {'machine': forms.HiddenInput}
         fields = '__all__'
 
 
-class MillingToolEntryForm(forms.ModelForm):
+class MillingToolEntryForm(NumberValidationMixin, forms.ModelForm):
     def __init__(self, machine, *args, **kwargs):
         super(MillingToolEntryForm, self).__init__(*args, **kwargs)
         for field_name in self.fields.keys():
             self.fields[field_name].widget.attrs['class'] = 'form-control'
         self.fields["holder"].queryset = ToolHolder.objects.filter(machine=machine)
+        self.machine = machine
 
     class Meta:
         model = ToolEntry
