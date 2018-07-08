@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load l10n %}
 
 {% block title %}Werkzeugliste {{ maschine.name }}{% endblock %}
 
 {% block content %}
+{% localize off %}
 <h1>Werkzeugliste {{ machine.name }}</h1>
 
 {% if machine.is_turning %}
@@ -97,4 +99,5 @@
 
 {% endfor %}
 </table>
+{% endlocalize %}
 {% endblock %}
