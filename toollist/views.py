@@ -10,7 +10,7 @@ def home(request):
 
 def list_tools(request, pk):
     machine = get_object_or_404(Machine, pk=pk)
-    entries = ToolEntry.objects.filter(machine=machine)
+    entries = ToolEntry.objects.filter(machine=machine).select_related('tool', 'type', 'holder', 'cooling')
 
     if request.GET.get('sort') == 'type':
         entries = entries.order_by('status', 'type__name', 'tool__name')
