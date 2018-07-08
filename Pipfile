@@ -10,10 +10,10 @@ django-debug-toolbar = "*"
 
 [packages]
 Django = "*"
-django-smart-selects = "*"
 "psycopg2-binary" = "*"
 django-environ = "*"
 whitenoise = "*"
+django-smart-selects = {git = "https://github.com/digi604/django-smart-selects.git", ref = "js-unlinting-fixes"}
 
 [requires]
 python_version = "3.6"
