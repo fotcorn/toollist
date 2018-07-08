@@ -7,202 +7,204 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-09 14:11-0500\n"
-"PO-Revision-Date: 2014-03-09 20:11+0100\n"
+"POT-Creation-Date: 2018-07-08 05:48-0500\n"
+"PO-Revision-Date: 2018-07-08 12:49+0200\n"
 "Last-Translator: Fabio Anderegg\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: models.py:13
-#: models.py:19
-#: models.py:89
+#: toollist/forms.py:20
+msgid "Number cannot be blank when tool is in machine"
+msgstr "Nummer kann nicht leer sein wenn Werkzeug in Maschine ist"
+
+#: toollist/forms.py:26
+msgid "This number is already in use on this machine"
+msgstr "Diese Nummer ist bereits in Verwendung"
+
+#: toollist/models.py:14 toollist/models.py:21 toollist/models.py:95
 msgid "Tool type"
 msgstr "Typ"
 
-#: models.py:14
+#: toollist/models.py:15
 msgid "Tool types"
 msgstr "Typen"
 
-#: models.py:25
-#: models.py:90
+#: toollist/models.py:27 toollist/models.py:96
 msgid "Tool"
 msgstr "Werkzeug"
 
-#: models.py:26
+#: toollist/models.py:28
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: models.py:36
+#: toollist/models.py:39
 msgid "Tool cooling"
 msgstr "Kühlung"
 
-#: models.py:37
+#: toollist/models.py:40
 msgid "Tool coolings"
 msgstr "Kühlungen"
 
-#: models.py:43
+#: toollist/models.py:47
 msgid "Milling"
 msgstr "Fräsen"
 
-#: models.py:44
+#: toollist/models.py:48
 msgid "Turning"
 msgstr "Drehen"
 
-#: models.py:60
-#: models.py:81
-#: models.py:93
+#: toollist/models.py:64 toollist/models.py:87 toollist/models.py:100
 msgid "Machine"
 msgstr "Maschine"
 
-#: models.py:61
+#: toollist/models.py:65
 msgid "Machines"
 msgstr "Maschinen"
 
-#: models.py:71
+#: toollist/models.py:76
 msgid "Tool holder"
 msgstr "Aufnahme"
 
-#: models.py:72
+#: toollist/models.py:77
 msgid "Tool holders"
 msgstr "Aufnahmen"
 
-#: models.py:82
+#: toollist/models.py:88
 msgid "Closet"
 msgstr "Schrank"
 
-#: models.py:83
+#: toollist/models.py:89
 msgid "NA"
 msgstr "NA"
 
-#: models.py:86
+#: toollist/models.py:92
 msgid "Number"
 msgstr "Nummer"
 
-#: models.py:94
+#: toollist/models.py:101
 msgid "Holder"
 msgstr "Aufnahme"
 
-#: models.py:95
+#: toollist/models.py:102
 msgid "Cooling"
 msgstr "Kühlung"
 
-#: models.py:97
+#: toollist/models.py:104
 msgid "Diameter"
 msgstr "Durchmesser"
 
-#: models.py:98
+#: toollist/models.py:105
 msgid "Angle"
 msgstr "Winkel"
 
-#: models.py:99
+#: toollist/models.py:106
 msgid "Cog count"
 msgstr "Zähnezahl"
 
-#: models.py:100
+#: toollist/models.py:107
 msgid "Chip flute"
 msgstr "Spannnutlänge"
 
-#: models.py:102
+#: toollist/models.py:108
+msgid "Apm"
+msgstr ""
+
+#: toollist/models.py:110
 msgid "Pliers"
 msgstr "Zange"
 
-#: models.py:103
+#: toollist/models.py:111
 msgid "Length"
 msgstr "Länge"
 
-#: models.py:104
+#: toollist/models.py:112
 msgid "Radius"
 msgstr "Radius"
 
-#: models.py:105
+#: toollist/models.py:113
 msgid "Edge radius"
 msgstr "Eckenradius"
 
-#: models.py:107
+#: toollist/models.py:115
 msgid "Comment"
 msgstr "Kommentar"
 
-#: models.py:109
+#: toollist/models.py:117
 msgid "Geomentry X"
 msgstr "Geometrie X"
 
-#: models.py:110
+#: toollist/models.py:118
 msgid "Geomentry Z"
 msgstr "Geometrie Z"
 
-#: models.py:111
+#: toollist/models.py:119
 msgid "Geomentry R"
 msgstr "Geometrie R"
 
-#: models.py:112
+#: toollist/models.py:120
 msgid "Geomentry Y"
 msgstr "Geometrie Y"
 
-#: models.py:113
+#: toollist/models.py:121
 msgid "Geomentry C"
 msgstr "Geometrie C"
 
-#: models.py:115
+#: toollist/models.py:123
 msgid "Wear X"
 msgstr "Verschleiss X"
 
-#: models.py:116
+#: toollist/models.py:124
 msgid "Wear Z"
 msgstr "Verschleiss Z"
 
-#: models.py:117
+#: toollist/models.py:125
 msgid "Wear R"
 msgstr "Verschleiss R"
 
-#: models.py:118
+#: toollist/models.py:126
 msgid "Wear Y"
 msgstr "Verschleiss Y"
 
-#: models.py:119
+#: toollist/models.py:127
 msgid "Wear C"
 msgstr "Verschleiss C"
 
-#: models.py:122
+#: toollist/models.py:130
 msgid "Tool entry"
 msgstr "Eintrag"
 
-#: models.py:123
+#: toollist/models.py:131
 msgid "Tools entries"
 msgstr "Einträge"
 
-#: templates/list.html:78
-msgid "Geometry"
-msgstr "Geometrie"
-
-#: templates/list.html:86
-msgid "Wear"
-msgstr "Verschleiss"
-
-#: templates/admin/base.html:28
-msgid "Welcome,"
-msgstr "Wilkommen,"
-
-#: templates/admin/base.html:33
-msgid "Documentation"
-msgstr "Dokumentation"
-
-#: templates/admin/base.html:36
-msgid "Change password"
-msgstr "Passwort ändern"
-
-#: templates/admin/base.html:38
-msgid "Log out"
-msgstr "Ausloggen"
-
-#: templates/admin/base.html:47
-msgid "Home"
-msgstr "Home"
-
-#: templates/admin/base_site.html:4
+#: toollist/templates/admin/base_site.html:6
 msgid "Django site admin"
 msgstr "Werkzeugliste Admin"
 
+#: toollist/templates/list.html:90
+msgid "Geometry"
+msgstr "Geometrie"
+
+#: toollist/templates/list.html:98
+msgid "Wear"
+msgstr "Verschleiss"
+
+#~ msgid "Welcome,"
+#~ msgstr "Wilkommen,"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentation"
+
+#~ msgid "Change password"
+#~ msgstr "Passwort ändern"
+
+#~ msgid "Log out"
+#~ msgstr "Ausloggen"
+
+#~ msgid "Home"
+#~ msgstr "Home"

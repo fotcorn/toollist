@@ -89,7 +89,7 @@ class ToolEntry(models.Model):
         (NA, _('NA')),
     )
 
-    number = models.BigIntegerField(_('Number'))
+    number = models.BigIntegerField(_('Number'), blank=True, null=True)
 
     name = models.CharField(max_length=255, null=True, blank=True)
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'), on_delete=models.CASCADE)
@@ -129,4 +129,3 @@ class ToolEntry(models.Model):
     class Meta:
         verbose_name = _('Tool entry')
         verbose_name_plural = _('Tools entries')
-        unique_together = ('number', 'machine')

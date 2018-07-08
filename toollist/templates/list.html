@@ -45,7 +45,7 @@
         <tr></tr>
         {% for entry in entries %}
           <tr class="trigger_comment {% if entry.status == 2 %}closet{% endif %}">
-            <td>{{ entry.number }}</td>
+            <td>{% if entry.number %}{{ entry.number }}{% endif %}</td>
             <td>{{ entry.type.name }}</td>
             <td>{{ entry.tool.name }}</td>
             {% if machine.is_turning %}
