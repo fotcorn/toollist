@@ -31,3 +31,7 @@ td {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.toollist-table thead {
+    background-color: #C0C0C0;
+}
