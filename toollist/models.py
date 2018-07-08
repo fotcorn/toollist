@@ -105,6 +105,7 @@ class ToolEntry(models.Model):
     angle = models.DecimalField(_('Angle'), max_digits=10, decimal_places=2, null=True, blank=True)
     cog_count = models.PositiveIntegerField(_('Cog count'), null=True, blank=True)
     chip_flute_length = models.DecimalField(_('Chip flute'), max_digits=10, decimal_places=2, null=True, blank=True)
+    apm = models.DecimalField(_('Apm'), max_digits=10, decimal_places=2, null=True, blank=True)
 
     pliers = models.DecimalField(_('Pliers'), max_digits=10, decimal_places=1, null=True, blank=True)
     length = models.DecimalField(_('Length'), max_digits=10, decimal_places=3, null=True, blank=True)
