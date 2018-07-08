@@ -7,7 +7,7 @@ from smart_selects.db_fields import ChainedForeignKey
 class ToolType(models.Model):
     name = models.CharField(max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -20,7 +20,7 @@ class Tool(models.Model):
     name = models.CharField(max_length=255)
     type = models.ForeignKey(ToolType, verbose_name=_('Tool type'), on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0} ({1})'.format(self.name, self.type.name)
 
     class Meta:
@@ -32,7 +32,7 @@ class Tool(models.Model):
 class ToolCooling(models.Model):
     name = models.CharField(max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -51,7 +51,7 @@ class Machine(models.Model):
     name = models.CharField(max_length=255)
     type = models.IntegerField(choices=TYPE_CHOICES, default=MILLING)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def is_milling(self):
@@ -69,7 +69,7 @@ class ToolHolder(models.Model):
     name = models.CharField(max_length=255)
     machine = models.ForeignKey(Machine, on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0} ({1})'.format(self.name, self.machine.name)
 
     class Meta:
