@@ -10,7 +10,7 @@ services:
     restart: always
 
   django:
-    image: toollist
+    image: fotcorn/toollist
     environment:
       - "DATABASE_URL=postgres://postgres:Cpe9Rs2XyxqJFh8eUvxfYMhZ@postgres:5432/postgres"
       - "SECRET_KEY=${SECRET_KEY}"
