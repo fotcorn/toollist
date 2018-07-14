@@ -7,7 +7,7 @@ ADD ./Pipfile /Pipfile
 ADD ./Pipfile.lock /Pipfile.lock
 
 RUN set -ex \
-    && apk add --no-cache build-base postgresql-dev linux-headers \
+    && apk add --no-cache build-base postgresql-dev linux-headers git \
     && pip install pipenv \
     && pipenv install --system --deploy \
     && pip install uwsgi==2.0.17
