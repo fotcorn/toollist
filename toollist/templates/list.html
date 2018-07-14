@@ -61,7 +61,17 @@
             <td>{% if entry.angle %}{{ entry.angle }}&deg;{% endif %}</td>
             <td>{% if entry.length %}{{ entry.length }}{% endif %}</td>
             <td>{% if entry.radius %}{{ entry.radius }}{% endif %}</td>
-            <td>{{ entry.get_status_display }}</td>
+            <td>
+              <form action="{% url 'update_tool_status' entry.pk %}" method="post">
+              {% csrf_token %}
+                <select name="status" autocomplete="off" class="status-select">
+                  <option value="1" {% if entry.status == 1 %}selected{% endif %}>{% trans "Machine" %}</option>
+                  <option value="2" {% if entry.status == 2 %}selected{% endif %}>{% trans "Closet" %}</option>
+                  <option value="3" {% if entry.status == 3 %}selected{% endif %}>{% trans "NA" %}</option>
+                </select>
+                <input type="hidden" name="scroll" class="scroll">
+              </form>
+            </td>
             {% if machine.is_turning %}
               <td><a href="{% url "edit_turning" entry.pk %}">Bearbeiten</a></td>
             {% else %}

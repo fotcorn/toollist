@@ -1,4 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+from django.views.generic import UpdateView
+
 from toollist.models import Machine, ToolEntry
 from toollist.forms import ToolEntryForm, MillingToolEntryForm
 
@@ -80,3 +83,13 @@ def remove(request, pk):
     machine_pk = entry.machine.pk
     entry.delete()
     return redirect('list_tools', machine_pk)
+
+
+class UpdateToolStatus(UpdateView):
+    model = ToolEntry
+    fields = ['status']
+
+    def get_success_url(self):
+        scroll = self.request.POST.get('scroll', 0)
+        url = reverse('list_tools', args=[self.object.machine.pk])
+        return '{}?scroll={}'.format(url, scroll)

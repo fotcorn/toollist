@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^add_turning/(?P<machine_pk>\d+)/', views.add_turning, name='add_turning'),
     url(r'^edit_turning/(?P<pk>\d+)/', views.edit_turning, name='edit_turning'),
     url(r'^remove/(?P<pk>\d+)/', views.remove, name='remove'),
+    path('update_tool_status/<pk>/', views.UpdateToolStatus.as_view(), name='update_tool_status'),
 
     url(r'^chaining/', include('smart_selects.urls')),
     path('admin/', admin.site.urls),
