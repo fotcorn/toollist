@@ -1,0 +1,25 @@
+version: '2.1'
+
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: Cpe9Rs2XyxqJFh8eUvxfYMhZ
+    networks:
+      - internal
+
+  django:
+    image: toollist
+    environment:
+      - "DATABASE_URL=postgres://postgres:Cpe9Rs2XyxqJFh8eUvxfYMhZ@postgres:5432/postgres"
+      - "SECRET_KEY=unsafe"
+      - "ALLOWED_HOSTS=localhost"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - internal
+
+networks:
+  internal:
