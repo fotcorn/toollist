@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from django.contrib.auth.views import LoginView
 from django.urls import path
 from django.contrib import admin
 from toollist import views
@@ -14,6 +15,8 @@ urlpatterns = [
     url(r'^edit_turning/(?P<pk>\d+)/', views.edit_turning, name='edit_turning'),
     url(r'^remove/(?P<pk>\d+)/', views.remove, name='remove'),
     path('update_tool_status/<pk>/', views.UpdateToolStatus.as_view(), name='update_tool_status'),
+
+    path('login/', LoginView.as_view(success_url='/'), name='login'),
 
     url(r'^chaining/', include('smart_selects.urls')),
     path('admin/', admin.site.urls),
